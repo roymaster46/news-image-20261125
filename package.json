@@ -1,0 +1,1 @@
+{"description":"One image summing up the world's news of Wednesday 25 November 2026","engines":{"node":">=22"},"license":"0BSD","main":"main.ts","name":"news-image-20261125","scripts":{"start":"node main.ts"},"type":"module","version":"1.0.0"}
