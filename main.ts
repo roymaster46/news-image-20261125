@@ -626,12 +626,14 @@ function main(): void {
     ["AFRICA 4", 4, GREEN], ["S. ASIA 2", 2, PURPLE], ["SE ASIA 2", 2, ORANGE],
     ["E. ASIA 2", 2, PINK], ["OCEANIA 2", 2, TEAL], ["WORLD 3", 3, BROWN],
   ];
+  const segW = Math.floor(1000 / regions.length); // equal width: every label + count fits
   let rx = 12;
-  for (const [label, n, col] of regions) {
-    const segW = Math.round((n / 35) * 1000);
-    rect(rx, 158, segW, 16, col);
-    drawTextC(rx + Math.floor(segW / 2), 161, label, 1, WHITE, true);
-    rx += segW;
+  for (let i = 0; i < regions.length; i++) {
+    const [label, , col] = regions[i];
+    const w = i === regions.length - 1 ? 1012 - rx : segW;
+    rect(rx, 158, w, 16, col);
+    drawTextC(rx + Math.floor(w / 2), 161, label, 1, WHITE, true);
+    rx += w;
   }
   line(12, 176, 1012, 176, INK);
 
